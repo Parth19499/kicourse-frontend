@@ -44,7 +44,7 @@ const Courses = () => {
       />
       <button
         className="btn btn-primary"
-        onClick={_.throttle(handleSearch, 1000)}
+        onClick={_.throttle(handleSearch, 2000, { trailing: false })}
       >
         Search
       </button>
