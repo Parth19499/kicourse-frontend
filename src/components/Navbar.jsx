@@ -12,7 +12,7 @@ const Navbar = () => {
           <li className="nav-item">
             <NavLink className="nav-link" to="/courses">
               <h2>
-                <span className="badge badge-primary">Parth</span>
+                <span className="badge badge-primary">KiCourse</span>
               </h2>
             </NavLink>
           </li>
@@ -21,11 +21,15 @@ const Navbar = () => {
               Courses
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/new-course">
+              Add New Course
+            </NavLink>
+          </li>
         </ul>
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <span className="text-light">parth@gmail.com</span>
-            <IconButton className="profilePic">
+            <IconButton>
               <Avatar src={getRandomAvatarSrc()} />
             </IconButton>
           </li>
