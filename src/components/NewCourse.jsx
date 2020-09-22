@@ -3,6 +3,7 @@ import Input from "./Input";
 import Joi from "joi-browser";
 import courseService from "../services/courseService";
 import { toast } from "react-toastify";
+import "./css/NewCourse.css";
 
 const NewCourse = ({ history }) => {
   const [courseName, setCourseName] = useState("");
@@ -44,21 +45,23 @@ const NewCourse = ({ history }) => {
   };
 
   return (
-    <div>
-      <Input
-        name="courseName"
-        value={courseName}
-        placeholder="Enter Course Name"
-        onChange={handleNameChange}
-        autoFocus={true}
-      />
-      <button
-        className="btn btn-primary"
-        onClick={handleSubmit}
-        disabled={validate()}
-      >
-        Save
-      </button>
+    <div className="newcourse">
+      <form className="form-inline d-flex justify-content-center">
+        <Input
+          name="courseName"
+          value={courseName}
+          placeholder="Enter Course Name"
+          onChange={handleNameChange}
+          autoFocus={true}
+        />
+        <button
+          className="btn btn-primary"
+          onClick={handleSubmit}
+          disabled={validate()}
+        >
+          Save
+        </button>
+      </form>
     </div>
   );
 };

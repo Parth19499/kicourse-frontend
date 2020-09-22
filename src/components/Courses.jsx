@@ -52,7 +52,7 @@ const Courses = () => {
 
   return (
     <div className="courses">
-      <form className="form-inline d-flex justify-content-center">
+      <div className="d-flex justify-content-center">
         <Input
           name="searchQuery"
           value={searchQuery}
@@ -60,13 +60,7 @@ const Courses = () => {
           onChange={handleSearchQueryChange}
           autoFocus={true}
         />
-        {/* <button
-          className="btn btn-primary mb-2"
-          onClick={_.throttle(handleSearch, 2000, { trailing: false })}
-        >
-          Search
-        </button> */}
-      </form>
+      </div>
       <Table data={renderCourse} />
       <Pagination
         totalItems={totalCount}

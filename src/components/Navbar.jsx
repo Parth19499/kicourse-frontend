@@ -1,10 +1,25 @@
 import { Avatar, IconButton } from "@material-ui/core";
 import { getRandomAvatarSrc } from "../utils/getRandomAvatar";
 import "./css/Navbar.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import UserMenu from "./UserMenu";
 
 const Navbar = () => {
+  const [avatarUrl, setAvatarUrl] = useState("");
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  useEffect(() => setAvatarUrl(getRandomAvatarSrc()), []);
+
+  const handleUserMenu = (e) => {
+    console.log(`open: ${e.currentTarget}`);
+    setAnchorEl(e.currentTarget);
+  };
+
+  const handleClose = (e) => {
+    console.log(`close`);
+    setAnchorEl(null);
+  };
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -29,9 +44,10 @@ const Navbar = () => {
         </ul>
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <IconButton>
-              <Avatar src={getRandomAvatarSrc()} />
+            <IconButton onClick={handleUserMenu}>
+              <Avatar src={avatarUrl} />
             </IconButton>
+            <UserMenu anchorEl={anchorEl} onClose={handleClose} />
           </li>
         </ul>
       </div>
