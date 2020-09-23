@@ -38,7 +38,7 @@ const Courses = () => {
         )
       : courses;
     const paginatedCourses = paginate(filteredCourses, currentPage, pageSize);
-    console.log(paginatedCourses);
+    // console.log(paginatedCourses);
     setRenderCourses(paginatedCourses);
     setTotalCount(filteredCourses.length);
   }, [courses, currentPage, searchQuery]);

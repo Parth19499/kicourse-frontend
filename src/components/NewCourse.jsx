@@ -39,8 +39,8 @@ const NewCourse = ({ history }) => {
       setCourseName("");
       history.push("/courses");
     } catch (ex) {
-      console.error(ex);
-      toast.error("Opps, Something went wrong!");
+      console.error(ex.message);
+      toast.error(ex.message);
     }
   };
 
