@@ -1,3 +1,7 @@
+.App_body {
+  padding: 10px;
+}
+
 .clickable {
   cursor: pointer;
 }

@@ -14,13 +14,15 @@ function App() {
       <ToastContainer />
       <BrowserRouter>
         <Navbar />
-        <Switch>
-          <Route path="/courses" component={Courses} />
-          <Route path="/new-course" component={NewCourse} />
-          <Route path="/not-found" component={NotFound} />
-          <Redirect from="/" to="/courses" exact />
-          <Redirect to="/not-found" />
-        </Switch>
+        <div className="App_body">
+          <Switch>
+            <Route path="/courses" component={Courses} />
+            <Route path="/new-course" component={NewCourse} />
+            <Route path="/not-found" component={NotFound} />
+            <Redirect from="/" to="/courses" exact />
+            <Redirect to="/not-found" />
+          </Switch>
+        </div>
       </BrowserRouter>
     </div>
   );
